@@ -1,4 +1,4 @@
-This below program is to reverse and integer using pre defined functions in Koltin:
+1. This below program is to reverse an integer using pre defined functions in Koltin:
 
 import kotlin.math.abs
 
@@ -11,3 +11,23 @@ fun main(){
 
 Inputs : any positive or negative numbers e.g. 500, -24, -501, 312
 outputs : According to above inputs outputs will be : 5, -42, -105, 213
+
+
+2. This below program is to reverse a String value using predefined and without using predefined functions in Kotlin:
+
+fun reverseStringManually(text: String): String{
+  var result = ""
+  val strArray = text.toCharArray()
+  var size = strArray.size - 1
+  while(size != -1){
+    result = result + strArray()
+    size--
+  }
+  return result
+}
+
+fun main(){
+  val text = "abcd"
+  println(text.reversed())
+  println(reverseStringManually(text))
+}

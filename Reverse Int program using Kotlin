@@ -20,7 +20,7 @@ fun reverseStringManually(text: String): String{
   val strArray = text.toCharArray()
   var size = strArray.size - 1
   while(size != -1){
-    result = result + strArray()
+    result = result + strArray[size]
     size--
   }
   return result

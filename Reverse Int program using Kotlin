@@ -1,0 +1,13 @@
+This below program is to reverse and integer using pre defined functions in Koltin:
+
+import kotlin.math.abs
+
+fun main(){
+  val number = 981 
+  val isNegative = number < 0
+  val resultInt = abs(number).toString().reversed().toInt()
+  if(isNegative) println(-resultInt) else println (resultInt)
+}
+
+Inputs : any positive or negative numbers e.g. 500, -24, -501, 312
+outputs : According to above inputs outputs will be : 5, -42, -105, 213

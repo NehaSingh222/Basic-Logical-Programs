@@ -1,0 +1,12 @@
+Remove first index of every string item and add that string to the given array.
+for example: input - ["acd", "bcc", "aca"]  output - ["acd", "bcc", "aca", "aba"]
+
+fun main(){
+  val inputArray = arrayOf("acd", "bcc", "aca")
+  val firstIndexValues = inputArray.map{it.first()}
+  val resultArray = inputArray + firstIndexValues.joinToString("")
+  println(resultArray.joinToString(","))
+}
+
+Above program is used minimum lines to complete the code.
+

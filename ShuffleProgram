@@ -1,0 +1,39 @@
+This is a shuffle program which we can use in music apps or anywhere else is needed. This program written in Java language.
+
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Shuffle {
+    public static void main(String[] args) {
+        String s = "abcdefgh";
+        String[] sArray = s.split("");
+        int max = s.length()-1;
+        ArrayList<Integer> indexList = new ArrayList<Integer>(max);
+        
+        while(indexList.size() != max+1){
+            int number = Math.abs(generateRandomNumber(0, max));
+            if(!indexList.contains(number)){
+                indexList.add(number);
+            }
+        }
+        
+        for(int i = 0; i<indexList.size(); i++){
+            System.out.println(sArray[indexList.get(i)]);
+        }
+    }
+    
+    public static int generateRandomNumber(int min, int max) {
+        long seed = System.currentTimeMillis();
+        
+        int a = 1664525;
+        int c = 1013904223;
+        int m = Integer.MAX_VALUE;
+        int x = (int) (seed % m);
+
+        x = (a * x + c) % m;
+        int randomNumber = min + (int) (x % (max - min + 1));
+
+        return randomNumber;
+    }
+}

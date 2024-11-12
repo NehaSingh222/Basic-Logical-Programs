@@ -1,0 +1,10 @@
+fun removeVowels(str: String): String{
+    val vowels = setOf('a','e','i','o','u','A','E','I','O','U')
+    return str.filterNot{it in vowels}
+}
+
+fun main() {
+    val text = "This String Contains Vowels To Be Removed"
+    val result = removeVowels(text)
+    println(result)
+}

@@ -1,0 +1,26 @@
+fun replaceSecondOccurrence(str: String, charToReplace: Char, replacement: Char): String {
+    var count = 0
+    val sb = StringBuilder()
+
+    for (c in str) {
+        if (c == charToReplace) {
+            count++
+            if (count == 2) {
+                sb.append(replacement)
+                count = 0
+            } else {
+                sb.append(c)
+            }
+        } else {
+            sb.append(c)
+        }
+    }
+
+    return sb.toString()
+}
+
+fun main() {
+    val str = "aaba, bada, eaea, cceeaa"
+    val newStr = replaceSecondOccurrence(str, 'a', '@')
+    println(newStr)
+}

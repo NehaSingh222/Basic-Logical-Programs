@@ -1,0 +1,55 @@
+Java program to reverse an Array from given Index point.
+
+public class ReverseArray{
+  public static void nain(string[] args){
+    int[] input = {1, 4, 7, 3, 5, 8, 2, 9, 6};
+    int index = 3;
+    //output Array should print - {3, 5, 8, 2, 9, 6, 1, 4, 7}
+    usingPreDefinedFunctions(input, index);
+    usingOldWay(input, index);
+  }
+
+  private static void usingPreDefinedFunctions(int[] input, int index){
+    int size = input.length;
+    int[] first = new int[size - index];
+    int[] second = new int[index];
+    int[] output = new int[size];
+
+    System.arraycopy(input, 0, second, 0, index);
+    System.arraycopy(input, index, first, 0, first.length);
+
+    System.arraycopy(first, 0, output, 0, first.length);
+    System.arraycopy(second, 0, output, first.length, second.length);
+
+    System.out.println(Arrays.toString(output));
+  }
+
+  private static void usingOldWay(int[] input, int index){
+    int size = input.length;
+    int[] first = new int[size - index];
+    int[] second = new int[index];
+    int[] output = new int[size];
+
+    if(index > 0 && index < size){
+      for(int i = 0; i < index; i++){
+        first[i] = index[i];
+      }
+
+      for(int i = 0; i < size - index; i++){
+        second[i] = input[i + index];
+      }
+    }
+
+    for(int i = 0; i < second.length; i++){
+      output[i] = second[i];
+    }
+
+    int len = second.length;
+
+    for(int i = 0; i < first.length; i++){
+      output[len + i] = first[i];
+    }
+
+    System.out.println(Arrays.toString(output));
+  }
+}
